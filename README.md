@@ -16,6 +16,62 @@ Dependencies:
 * Project Dependency: Post Processing V2
 
 
+Basic Getting started notes:
+----------------------------
+
+
+First and foremost you must install the "Post Processing V2" package from the "Unity Registry".
+
+
+Next, create a new "Layer" called: "Post Process"...
+
+...as that will be used later in your "Post-process Layer"
+
+
+Next you must note that:
+
+Your scene needs a "Camera"
+
+Your scene needs a: "Directional Light"
+
+
+Barebones: On "Camera":
+
+You need a: "Post-process Layer"
+
+Example:
+
+Trigger: "Main Camera (Transform)"
+
+Layer: "Post Process"
+
+
+You need a: "Post-process Volume"
+
+Example:
+
+Profile: "Main Camera Profile"
+
+
+You need: "Sun Shafts"
+
+Shafts Caster: "Directional Light"
+
+
+Adding "Sun Shafts" Note:
+
+There is a Menu Item: (can be used if selected a camera to add the sunshafts to)
+
+Component -> Image Effects -> Rendering -> Sun Shafts
+
+
+Or you can just add the Sun Shafts to the camera normally...
+
+Now, the Directional Light Camera, positions and other related settings can be setup and tweaked to your desire, needs and likings...
+
+Now, also as far as Post-process Layer, Post-process Volume and Sun Shafts, note that the majority of other settings can be setup and tweaked to your desire, needs and likings...
+
+
 Project Reason Note: 
 --------------------
 
