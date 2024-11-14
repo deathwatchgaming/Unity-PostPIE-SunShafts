@@ -64,7 +64,7 @@ Profile: "Main Camera Profile"
 
 
 
-You need: "Sun Shafts"
+You need the: "Sun Shafts"
 
 Example:
 
@@ -77,14 +77,17 @@ On Adding "Sun Shafts" Note:
 
 There is a Menu Item: (can be used if you "select" a camera to add the sunshafts to)
 
+
+IE:
+
 Component -> Image Effects -> Rendering -> Sun Shafts
 
 
-Or you can just add the Sun Shafts to the camera normally in the ditor sidebar...
+Or, you can just add the: "Sun Shafts" to the camera normally in the Editor Sidebar...
 
 
 
-Now, for the "Directional Light" & "Camera", positions and other related settings can be setup and tweaked to your desire, needs and likings...
+Now, for the "Directional Light" & "Camera", positions, rotations and other related settings can be setup and tweaked to your desire, needs and likings...
 
 Now, also as far as the "Post-process Layer", "Post-process Volume" and "Sun Shafts", note that the majority of other settings can be setup and tweaked to your desire, needs and likings...
 
