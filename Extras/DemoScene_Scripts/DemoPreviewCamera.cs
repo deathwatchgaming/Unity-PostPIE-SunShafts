@@ -141,12 +141,12 @@ public class DemoPreviewCamera : MonoBehaviour
 
 		mouseScroll = Input.GetAxis(_mouseScrollWheelInput);
 
-        if (mouseScroll > 0)
+		if (mouseScroll > 0)
 		{
 			_cameraFOV = ++currentFieldOfView;
 		}
 
-        else if (mouseScroll < 0)
+		else if (mouseScroll < 0)
 		{
 			_cameraFOV = --currentFieldOfView;
 		}
