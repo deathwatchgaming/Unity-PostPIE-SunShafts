@@ -4,7 +4,7 @@
  * Author: DeathwatchGaming
  * License: MIT 
  */
-
+ 
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
@@ -71,22 +71,34 @@ public class DemoPreviewCamera : MonoBehaviour
 		[Tooltip("The camera lift speed amount")]
 		[SerializeField] private float _cameraLiftSpeed = 4;
 
-		[Tooltip("The field of view amount")]
+		[Tooltip("The desired field of view amount")]
 		[SerializeField] private float _cameraFOV = 60f;
 
 		[Tooltip("The zoom ratio amount")]
 		[SerializeField] private float _zoomRatio = 0.5f;
 
+		[Tooltip("The minimum field of view amount")]
+		[SerializeField,Range(float.Epsilon, 179f)] private float _minimumFOV = 1f;
+		
+		[Tooltip("The maximum field of view amount")]		
+		[SerializeField,Range(float.Epsilon, 179f)] private float _maximumFOV = 118f;
+
 	private float _horizontalRotation = 0.0f;
 	private float _verticalRotation = 0.0f;
 	private float currentFieldOfView = 0f;
+	private float _minFieldOfView = 0f;
+	private float _maxFieldOfView = 0f;
 	private float mouseScroll = 0f;
+
+	// Start is called before the first frame update 
 
 	private void Start()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 	}
+
+	// Update is called every frame
 
 	private void Update()
 	{
@@ -160,6 +172,14 @@ public class DemoPreviewCamera : MonoBehaviour
 		{
 			_cameraFOV = ++currentFieldOfView;
 		}
+
+		_minFieldOfView = Mathf.Clamp(_minimumFOV, float.Epsilon, _maximumFOV);
+		_maxFieldOfView = Mathf.Clamp(_maximumFOV, _minimumFOV, 179f);
+
+		_minimumFOV = _minFieldOfView;
+		_maximumFOV = _maxFieldOfView;
+
+		_cameraFOV = Mathf.Clamp(currentFieldOfView, _minimumFOV, _maximumFOV);
 
 		GetComponent<Camera>().fieldOfView = _cameraFOV + _zoomRatio * Time.deltaTime;
 
