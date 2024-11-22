@@ -83,6 +83,11 @@ public class DemoPreviewCamera : MonoBehaviour
 		[Tooltip("The maximum field of view amount")]		
 		[SerializeField,Range(float.Epsilon, 179f)] private float _maximumFOV = 118f;
 
+	[Header("Enabled State")]
+
+		[Tooltip("The Preview Camera enabled state")]
+		public bool PreviewCameraEnabled = true;
+
 	private float _horizontalRotation = 0.0f;
 	private float _verticalRotation = 0.0f;
 	private float currentFieldOfView = 0f;
@@ -101,6 +106,25 @@ public class DemoPreviewCamera : MonoBehaviour
 	// Update is called every frame
 
 	private void Update()
+	{
+		if (PreviewCameraEnabled == true)
+		{
+			GetComponent<DemoPreviewCamera>().enabled = true;
+			//Debug.Log("The Preview Camera is enabled");
+			UpdatePreviewCamera();
+		}
+
+		else if (PreviewCameraEnabled == false)
+		{
+			//Debug.Log("The Preview Camera is disabled");
+			GetComponent<DemoPreviewCamera>().enabled = false;	
+		}
+
+	}
+
+	// UpdatePreviewCamera is called in Update
+
+	private void UpdatePreviewCamera()
 	{
 		_horizontalRotation += Input.GetAxis(_mouseXInput) * _mouseSensitivity * Time.deltaTime;
 		_verticalRotation += Input.GetAxis(_mouseYInput) * _mouseSensitivity * Time.deltaTime;
@@ -182,7 +206,6 @@ public class DemoPreviewCamera : MonoBehaviour
 		_cameraFOV = Mathf.Clamp(currentFieldOfView, _minimumFOV, _maximumFOV);
 
 		GetComponent<Camera>().fieldOfView = _cameraFOV + _zoomRatio * Time.deltaTime;
-
 	}
 
 }
