@@ -62,6 +62,7 @@ public class PreviewCameraAltitude : MonoBehaviour
         // _previewCameraAltitude
         _previewCameraAltitude = this;
 
+        _cameraAltitudeText.fontSize = 26;
         _cameraAltitudeText.fontStyle = FontStyles.SmallCaps;
         _cameraAltitudeText.enableAutoSizing = true;        
     }        
