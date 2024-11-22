@@ -88,7 +88,7 @@ public class PreviewCameraAltitude : MonoBehaviour
             _cameraAltitudeParent.gameObject.SetActive(false);
             _altitudeBackground.gameObject.SetActive(false);
             _cameraAltitudeText.gameObject.SetActive(false);
-            GetComponent<PreviewCameraAltitude>().enabled = false;;
+            GetComponent<PreviewCameraAltitude>().enabled = false;
         }
         
     }
