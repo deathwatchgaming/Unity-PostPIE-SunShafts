@@ -95,10 +95,16 @@ public class DemoPreviewCamera : MonoBehaviour
 	private float _maxFieldOfView = 0f;
 	private float mouseScroll = 0f;
 
+	// Static
+
+	public static DemoPreviewCamera _demoPreviewCamera;
+
 	// Start is called before the first frame update 
 
 	private void Start()
 	{
+		_demoPreviewCamera = this;
+		
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 	}

@@ -36,25 +36,27 @@ public class PreviewCameraAltitude : MonoBehaviour
     [Header("Altitude Text")]
 
         [Tooltip("The Preview Camera Interface Altitude Text Mesh Pro Text")]
-        // TextMeshProUGUI _previewCameraAltitudeText
+        // TextMeshProUGUI _cameraAltitudeText
         [SerializeField] private TextMeshProUGUI _cameraAltitudeText;
 
     // Altitude Unit Type
     [Header("Unit Type")]
 
         [Tooltip("The Preview Camera Altitude Text Altitude Measurement Unit Type")]
-        // PreviewCameraAltitudeType _previewCameraAltitudeType
+        // CameraAltitudeType _cameraAltitudeType
         [SerializeField] private CameraAltitudeType _cameraAltitudeType;
 
     // Enabled State
     [Header("Enabled State")]
 
         [Tooltip("The Preview Camera Altitude enabled state")]
-        // bool previewCamAltitudeEnabled is true
+        // bool CameraAltitudeEnabled is true
         public bool CameraAltitudeEnabled = true;
 
     // PreviewCameraAltitude _previewCameraAltitude
     public static PreviewCameraAltitude _previewCameraAltitude;
+
+    // Start is called before the first frame update
 
     // private void Start
     private void Start()
@@ -65,7 +67,9 @@ public class PreviewCameraAltitude : MonoBehaviour
         _cameraAltitudeText.fontSize = 26;
         _cameraAltitudeText.fontStyle = FontStyles.SmallCaps;
         _cameraAltitudeText.enableAutoSizing = true;        
-    }        
+    }
+
+    // Update is called every frame        
 
     // private void Update
     private void Update()
@@ -96,17 +100,17 @@ public class PreviewCameraAltitude : MonoBehaviour
     // UpdateHUD
     private void UpdateHUD()
     {
-        // if
+        // if _cameraAltitudeType equals CameraAltitudeType ft
         if (_cameraAltitudeType == CameraAltitudeType.ft)
         {
-            // _previewCameraAltitude text
+            // _cameraAltitude text is Altitude: ft
             _cameraAltitudeText.text = "Altitude: " + (transform.position.y / 0.3048f).ToString("F0") + " ft";
         }
 
-        // else if
+        // else if _cameraAltitudeType equals CameraAltitudeType m
         else if (_cameraAltitudeType == CameraAltitudeType.m)
         {
-            // _previewCameraAltitude text
+            // _cameraAltitude text is Altitude: m
             _cameraAltitudeText.text = "Altitude: " + transform.position.y.ToString("F0") + " m";            
         }
 
