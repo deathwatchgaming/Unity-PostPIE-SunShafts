@@ -8,7 +8,6 @@ Description:
 This is simply the old "Sun Shafts Image Effects" from Unity "Standard Assets" simply edited to use with "Post Processing V2".
 
 
-
 Dependencies:
 -------------
 
@@ -19,7 +18,6 @@ Dependencies:
 Note: You must install the "Post Processing V2" package from the "Unity Registry"!
 
 
-
 Basic "Getting Started" Notes:
 ------------------------------
 
@@ -27,11 +25,9 @@ Basic "Getting Started" Notes:
 First and foremost you must install the "Post Processing V2" package from the "Unity Registry".
 
 
-
 Next, create a new "Layer" called: "Post Process"...
 
 ...as that will be used later in your "Post-process Layer"
-
 
 
 Next you must note that:
@@ -40,7 +36,6 @@ Next you must note that:
 Your scene needs a "Camera"
 
 Your scene needs a: "Directional Light"
-
 
 
 Barebones needed: On "Camera":
@@ -55,7 +50,6 @@ Trigger: "Main Camera (Transform)"
 Layer: "Post Process"
 
 
-
 You need a: "Post-process Volume"
 
 Example:
@@ -63,13 +57,11 @@ Example:
 Profile: "Main Camera Profile"
 
 
-
 You need the: "Sun Shafts"
 
 Example:
 
 Shafts Caster: "Directional Light"
-
 
 
 On Adding "Sun Shafts" Note:
@@ -86,11 +78,9 @@ Component -> Image Effects -> Rendering -> Sun Shafts
 Or, you can just add the: "Sun Shafts" to the camera normally in the Editor Sidebar...
 
 
-
 Now, for the "Directional Light" & "Camera", positions, rotations and other related settings can be setup and tweaked to your desire, needs and likings...
 
 Now, also as far as the "Post-process Layer", "Post-process Volume" and "Sun Shafts", note that the majority of other settings can be setup and tweaked to your desire, needs and likings...
-
 
 
 Project Creation Reason Note: 
